@@ -94,15 +94,14 @@ public PlacePayload setPayload(String name, String address, String phone_number,
 		         setResponse(response);		     			
 		}
    
-   public void getVerifyValueUsingGetPlaceAPI (String expectedKey, String expectedValue) throws IOException { 
+   public void getVerifyValueUsingGetPlaceAPI () throws IOException { 
    	
 	   Response response = given().queryParam("key", "qaclick123").queryParam("place_id", placeId1)
 	   			.header("Content-Type", "application/json")
 	   			.when().get(getConfigValue("GetPlaceBasePath"))
 	   			.then()
-	   			.extract().response(); 
-	  
-	  getVerifyStringValue(response.asString(), expectedKey, expectedValue);
+	   			.extract().response();	   
+	            setResponse(response);	 
 	              			
 	   	}
    

@@ -86,7 +86,10 @@ public class StepDefinations extends Base {
 	@And("I verify {string} is updated to {string} using get place api")
 	public void i_verify_is_updated_to_using_get_place_api(String expectedKey, String expectedValue) throws IOException {
 	   
-		placeAPI.getVerifyValueUsingGetPlaceAPI(expectedKey, expectedValue);
+		placeAPI.getVerifyValueUsingGetPlaceAPI();		
+		getVerifyStringValue(getResponse().asString(), expectedKey, expectedValue);
+		
+		
 	}
 
 	
